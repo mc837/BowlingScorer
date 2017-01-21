@@ -44,14 +44,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BowlingFrameCreatorTests.cs" />
-    <Compile Include="BowlingScoreSplitterTests.cs" />
-    <Compile Include="BowlingUnpackerTests.cs" />
-    <Compile Include="BowlScorerTests.cs" />
+    <Compile Include="Services\BowlingFrameCreatorTests.cs" />
+    <Compile Include="Services\BowlingScoreSplitterTests.cs" />
+    <Compile Include="Services\BowlingUnpackerTests.cs" />
+    <Compile Include="Services\BowlScorerTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BowlingScorer\BowlingScorer.csproj">
+      <Project>{44EDAC49-1AFE-4AB7-BD93-6BC6648C27A4}</Project>
+      <Name>BowlingScorer</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

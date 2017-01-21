@@ -1,8 +1,7 @@
-﻿using NUnit.Framework;
-using NUnit.Framework.Constraints;
-using NUnit.Framework.Internal;
+﻿using BowlingScorer.Services;
+using NUnit.Framework;
 
-namespace BowlingScorerTests
+namespace BowlingScorerTests.Services
 {
     public class BowlingScoreSplitterTests
     {
@@ -22,14 +21,6 @@ namespace BowlingScorerTests
             var splitter = new BowlingStringSplitter();
             var result = splitter.Split(bowlingString);
             Assert.That(result.Length, Is.EqualTo(0));
-        }
-    }
-
-    public class BowlingStringSplitter
-    {
-        public string [] Split(string bowlingString)
-        {
-            return bowlingString?.Split('|') ?? new string[0];
         }
     }
 }
