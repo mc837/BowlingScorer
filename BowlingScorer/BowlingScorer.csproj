@@ -42,12 +42,14 @@
   <ItemGroup>
     <Compile Include="Models\Frame.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\BonusScorer.cs" />
     <Compile Include="Services\BowlingFrameCreator.cs" />
     <Compile Include="Services\BowlingStringSplitter.cs" />
     <Compile Include="Services\BowlingStringUnpacker.cs" />
     <Compile Include="Services\BowlScorer.cs" />
     <Compile Include="Services\Interfaces\ICreateBowlingFrames.cs" />
     <Compile Include="Services\Interfaces\IScoreBowls.cs" />
+    <Compile Include="Services\Interfaces\IUnpackBowlingStrings.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

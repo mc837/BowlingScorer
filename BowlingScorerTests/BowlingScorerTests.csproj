@@ -44,6 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Services\BonusScorerTests.cs" />
     <Compile Include="Services\BowlingFrameCreatorTests.cs" />
     <Compile Include="Services\BowlingScoreSplitterTests.cs" />
     <Compile Include="Services\BowlingUnpackerTests.cs" />

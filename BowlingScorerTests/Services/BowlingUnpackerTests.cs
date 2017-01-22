@@ -12,10 +12,10 @@ namespace BowlingScorerTests.Services
             var unpacker = new BowlingStringUnpacker(new BowlingFrameCreator(new BowlScorer()));
             var result = unpacker.Unpack(bowlingGame);
             Assert.That(result.Count, Is.EqualTo(4));
-            Assert.That(result[0].BowlTotal, Is.EqualTo(10));
-            Assert.That(result[1].BowlTotal, Is.EqualTo(7));
-            Assert.That(result[2].BowlTotal, Is.EqualTo(4));
-            Assert.That(result[3].BowlTotal, Is.EqualTo(10));
+            Assert.That(result[0].FrameBowlsTotal, Is.EqualTo(10));
+            Assert.That(result[1].FrameBowlsTotal, Is.EqualTo(7));
+            Assert.That(result[2].FrameBowlsTotal, Is.EqualTo(4));
+            Assert.That(result[3].FrameBowlsTotal, Is.EqualTo(10));
         }
     }
 }

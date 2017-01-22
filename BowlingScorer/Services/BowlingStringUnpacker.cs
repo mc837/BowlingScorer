@@ -4,7 +4,7 @@ using BowlingScorer.Services.Interfaces;
 
 namespace BowlingScorer.Services
 {
-    public class BowlingStringUnpacker
+    public class BowlingStringUnpacker : IUnpackBowlingStrings
     {
         private readonly ICreateBowlingFrames _bowlingFrameCreator;
 
@@ -21,7 +21,6 @@ namespace BowlingScorer.Services
             {
                 scoreList.Add(_bowlingFrameCreator.Create(score));
             }
-
             return scoreList;
         }
     }
