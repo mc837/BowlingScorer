@@ -10,6 +10,9 @@ namespace BowlingScorer.Console
     {
         static void Main(string[] args)
         {
+            var scoreString = System.Console.ReadLine();
+
+
         }
     }
 }

@@ -3,7 +3,7 @@ using BowlingScorer.Services.Interfaces;
 
 namespace BowlingScorer.Services
 {
-    public class BowlingFrameCreator : ICreateBowlingFrames
+    public class BowlingFrameCreator : ICreateABowlingFrame
     {
         private readonly IScoreBowls _bowlScorer;
 

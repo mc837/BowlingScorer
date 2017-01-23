@@ -46,10 +46,11 @@
   <ItemGroup>
     <Compile Include="Services\BonusScorerTests.cs" />
     <Compile Include="Services\BowlingFrameCreatorTests.cs" />
+    <Compile Include="Services\BowlingFramesCreatorTests.cs" />
     <Compile Include="Services\BowlingScoreSplitterTests.cs" />
-    <Compile Include="Services\BowlingUnpackerTests.cs" />
     <Compile Include="Services\BowlScorerTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\GameCreatorTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

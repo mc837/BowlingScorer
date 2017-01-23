@@ -1,6 +1,8 @@
+using BowlingScorer.Services.Interfaces;
+
 namespace BowlingScorer.Services
 {
-    public class BowlingStringSplitter
+    public class BowlingStringSplitter : ISplitBowlingStrings
     {
         public string [] Split(string bowlingString)
         {
