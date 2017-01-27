@@ -14,10 +14,10 @@ namespace BowlingScorer.Services
 
         public Frame Create(string scoreString)
         {
-            return scoreString.Length == 3 ? CreateFrameWithBonuses(scoreString) : CreateFrameWithoutBonuses(scoreString);
+            return scoreString.Length == 3 ? CreateFrameWithBonusFrames(scoreString) : CreateFrameWithoutBonusFrames(scoreString);
         }
 
-        private Frame CreateFrameWithBonuses(string scoreString)
+        private Frame CreateFrameWithBonusFrames(string scoreString)
         {
             var frame = new Frame {BowlOneScore = _bowlScorer.Score(scoreString[0])};
 
@@ -54,7 +54,7 @@ namespace BowlingScorer.Services
             return frame;
         }
 
-        private Frame CreateFrameWithoutBonuses(string scoreString)
+        private Frame CreateFrameWithoutBonusFrames(string scoreString)
         {
             return new Frame
             {

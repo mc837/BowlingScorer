@@ -1,45 +1,22 @@
-﻿using System.Collections.Generic;
-using BowlingScorer.Models;
-using BowlingScorer.Services;
-using BowlingScorer.Services.Interfaces;
+﻿using BowlingScorer.Services;
 using NUnit.Framework;
 
 namespace BowlingScorerTests.Services
 {
     public class GameCreatorTests
     {
-        [Test]
-        public void should_CreateAGame_When_Invoked()
+        [TestCase("X-|X-|X-|X-|X-|X-|X-|X-|X-|XXX", 10, 300)]
+        [TestCase("5/|5/|5/|5/|5/|5/|5/|5/|5/|5/5", 10, 150)]
+        [TestCase("9-|9-|9-|9-|9-|9-|9-|9-|9-|9--", 10, 90)]
+        [TestCase("--|--|--|--|--|--|--|--|--|---", 10, 0)]
+        public void should_CreateAGame_When_Invoked(string bowlingString, int frameCount, int gamesScore)
         {
-            var scoreString = "X-|X-|X-|X-|X-|X-|X-|X-|X-|X-";
-            var gameCreator= new GameCreator(new BowlingFramesCreator(new BowlingStringSplitter(), new BowlingFrameCreator(new BowlScorer())));
-            var game = gameCreator.Create(scoreString);
-            Assert.That(game.Frames.Count, Is.EqualTo(10));
-            //Assert.That(game.Score, Is.EqualTo(3));
+            var gameCreator =
+                new GameCreator(new BowlingFramesCreator(new BowlingStringSplitter(),
+                    new BowlingFrameCreator(new BowlScorer()), new BonusScorer()));
+            var game = gameCreator.Create(bowlingString);
+            Assert.That(game.Frames.Count, Is.EqualTo(frameCount));
+            Assert.That(game.Score(), Is.EqualTo(gamesScore));
         }
-    }
-
-    public class GameCreator
-    {
-        private readonly ICreateBowlingFrames _framesCreator;
-
-        public GameCreator(ICreateBowlingFrames framesCreator)
-        {
-            _framesCreator = framesCreator;
-        }
-
-        public Game Create(string scoreString)
-        {
-            return new Game
-            {
-                Frames = _framesCreator.Create(scoreString)
-            };
-        }
-    }
-
-    public class Game
-    {
-        public List<Frame> Frames { get; set; }
-        public int Score { get; set; }
     }
 }

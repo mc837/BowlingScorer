@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\Game.cs" />
     <Compile Include="Services\BowlingFramesCreator.cs" />
     <Compile Include="Models\Frame.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -47,8 +48,10 @@
     <Compile Include="Services\BowlingFrameCreator.cs" />
     <Compile Include="Services\BowlingStringSplitter.cs" />
     <Compile Include="Services\BowlScorer.cs" />
+    <Compile Include="Services\GameCreator.cs" />
     <Compile Include="Services\Interfaces\ICreateABowlingFrame.cs" />
     <Compile Include="Services\Interfaces\ICreateBowlingFrames.cs" />
+    <Compile Include="Services\Interfaces\IScoreBowlingBonusPoints.cs" />
     <Compile Include="Services\Interfaces\IScoreBowls.cs" />
     <Compile Include="Services\Interfaces\ISplitBowlingStrings.cs" />
   </ItemGroup>

@@ -8,11 +8,13 @@ namespace BowlingScorer.Services
     {
         private readonly ISplitBowlingStrings _bowlingScoreSplitter;
         private readonly ICreateABowlingFrame _frameCreator;
+        private readonly IScoreBowlingBonusPoints _bonusScorer;
 
-        public BowlingFramesCreator(ISplitBowlingStrings bowlingScoreSplitter, ICreateABowlingFrame frameCreator)
+        public BowlingFramesCreator(ISplitBowlingStrings bowlingScoreSplitter, ICreateABowlingFrame frameCreator, IScoreBowlingBonusPoints bonusScorer)
         {
             _bowlingScoreSplitter = bowlingScoreSplitter;
             _frameCreator = frameCreator;
+            _bonusScorer = bonusScorer;
         }
 
         public List<Frame> Create(string scoreString)
@@ -25,6 +27,9 @@ namespace BowlingScorer.Services
             {
                 scoreList.Add(_frameCreator.Create(score));
             }
+
+            _bonusScorer.Score(scoreList);
+
             return scoreList;
         }
     }
